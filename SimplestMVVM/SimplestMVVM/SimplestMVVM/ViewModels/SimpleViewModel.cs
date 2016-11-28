@@ -10,7 +10,7 @@ namespace SimplestMVVM.ViewModels
 {
     public class SimpleViewModel : INotifyPropertyChanged
     {
-        private string versionText = "N/A";
+        private string versionText = "v2.00";
         private string login;
         private bool loginOk = false;
         private string statusText = "Indtast telefonnummer";
@@ -103,7 +103,6 @@ namespace SimplestMVVM.ViewModels
                 if(StatusText != value)
                 {
                     statusText = value;
-                    VersionText = "v2.00"; // Sæt versionsnummer, når status opdateres
                     OnPropertyChanged();
                 }
             }

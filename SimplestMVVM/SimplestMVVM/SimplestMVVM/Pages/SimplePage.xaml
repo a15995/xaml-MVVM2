@@ -5,8 +5,8 @@
   <StackLayout>
     <Label x:Name="versionsTekst" Text="N/A" HorizontalTextAlignment="Center"/>
     <StackLayout VerticalOptions="EndAndExpand">
-      <Label x:Name="statusTekst" Text="Indtast telefonnummer"/>
-      <Entry x:Name="loginEntry" Placeholder="Indtast Telefonnummer" Keyboard="Telephone"/>
+      <Label x:Name="statusTekst" Text="Indtast Telefonnummer"/>
+      <Entry x:Name="loginEntry" Placeholder="8 cifre" Keyboard="Telephone"/>
       <Button x:Name="loginKnap" Text="Login"/>
     </StackLayout>
   </StackLayout>
