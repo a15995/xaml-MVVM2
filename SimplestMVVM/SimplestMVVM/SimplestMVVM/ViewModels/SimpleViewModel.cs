@@ -10,7 +10,7 @@ namespace SimplestMVVM.ViewModels
 {
     public class SimpleViewModel : INotifyPropertyChanged
     {
-        private string versionText = "v2.00";
+        private string versionText = "2.0.0"; // 1. ciffer: major version | 2. ciffer: minor version | 3. ciffer: build version
         private string login;
         private bool loginOk = false;
         private string statusText = "Indtast telefonnummer";
@@ -42,7 +42,7 @@ namespace SimplestMVVM.ViewModels
                 return login;
             }
 
-            set
+            set // Kaldes for hvert tastetryk (set kaldes, fordi vi anvender OneWayToSource - havde vi anvendt OneWay ville get blive kaldt)
             {
                 // Tjek at den nye værdi ikke er lig med den nuværende
                 if (Login != value)
@@ -100,7 +100,7 @@ namespace SimplestMVVM.ViewModels
 
             set
             {
-                if(StatusText != value)
+                if (StatusText != value)
                 {
                     statusText = value;
                     OnPropertyChanged();
