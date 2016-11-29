@@ -16,29 +16,29 @@ namespace SimplestMVVM.Pages
         {
             this.simpleViewModel = simpleViewModel;
 
-            //The binding context refers to the object we are binding against.
-            //This can also be set from XAML
+            // Bindings-konteksten refererer til objektet vi binder mod.
+            // Dette kan også sættes fra XAML
             BindingContext = this.simpleViewModel;
 
-            //Create XAML objects
+            // Skab XAML objekter (skal gøres FØR bindings sættes)
             InitializeComponent();
 
-            //Sæt versions-binding vha. lambda og sikkerhed
+            // Sæt versions-binding vha. lambda og autokorrektur
             versionsTekst.SetBinding<SimpleViewModel>(Label.TextProperty, vm => vm.VersionText, BindingMode.OneWay);
 
-            //Sæt status-binding vha. lambda og sikkerhed
+            // Sæt status-binding vha. lambda og autokorrektur
             statusTekst.SetBinding<SimpleViewModel>(Label.TextProperty, vm => vm.StatusText, BindingMode.OneWay);
 
-            //Binding method #2 Set binding using lambda and typesafety
+            // Bindings-metode #2 Sæt binding vha. lambda og autokorrektur
             loginEntry.SetBinding<SimpleViewModel>(Entry.TextProperty, vm => vm.Login, BindingMode.OneWayToSource);
 
-            //Binding method #1: Set bindings using unsafe Text
+            // Bindings-metode #1: Sæt bindinger vha. usikker tekst
             //loginKnap.SetBinding(Button.IsEnabledProperty, "LoginOk", BindingMode.OneWay);
 
-            //Sæt login-binding vha. lambda og sikkerhed
+            // Sæt login-binding vha. lambda og autokorrektur
             loginKnap.SetBinding<SimpleViewModel>(Button.IsEnabledProperty, vm => vm.LoginOk, BindingMode.OneWay);
 
-            //Binding method #3 - see the XAML file ;)
+            // Binding-metode #3 - se XAML-filen ;)
         }
     }
 }

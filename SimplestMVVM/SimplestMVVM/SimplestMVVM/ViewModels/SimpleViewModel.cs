@@ -15,7 +15,7 @@ namespace SimplestMVVM.ViewModels
         private bool loginOk = false;
         private string statusText = "Indtast telefonnummer";
 
-        //We need to implement this event in order to fullfill INotifyPropertyChanged event
+        // Vi skal implementere denne event for at opfylde INotifyPropertyChanged-kontrakten
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string VersionText
@@ -44,11 +44,11 @@ namespace SimplestMVVM.ViewModels
 
             set
             {
-                //Check that the new value is not equal to the current
+                // Tjek at den nye værdi ikke er lig med den nuværende
                 if (Login != value)
                 {
                     login = value;
-                    OnPropertyChanged("Login"); //propertyname provided manually
+                    OnPropertyChanged("Login"); // property-navnet tildelt manuelt
 
                     if (String.IsNullOrEmpty(Login) || String.IsNullOrWhiteSpace(Login))
                     {
@@ -86,7 +86,7 @@ namespace SimplestMVVM.ViewModels
                 if (loginOk != value)
                 {
                     loginOk = value;
-                    OnPropertyChanged(); //compiler provides the property name;
+                    OnPropertyChanged(); // Compileren tildeler property-navnet;
                 }
             }
         }
@@ -108,10 +108,10 @@ namespace SimplestMVVM.ViewModels
             }
         }
 
-        //Simple function that we call whenever we want to tell bindings that
-        //some property has changed.
-        //Note: CallerMemberName is just compiler-sugar that puts in the name of
-        //the calling property if no value is provided.        
+        // Simel funktion som vi kalder når vi vil fortælle bindings at
+        // et givent property har ændret sig.
+        // Note: CallerMemberName er blot compiler-sukker som indsætter navnet på
+        // det kaldende property hvis der ikke er tildelt en værdi.    
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var ev = PropertyChanged;

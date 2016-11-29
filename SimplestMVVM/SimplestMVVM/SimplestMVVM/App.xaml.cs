@@ -14,7 +14,7 @@ namespace SimplestMVVM
         {
             InitializeComponent();
 
-            //create ViewModel
+            // Skab ViewModel
             var viewModel = new SimpleViewModel();
             MainPage = new SimplePage(viewModel);
         }
